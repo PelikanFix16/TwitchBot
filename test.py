@@ -11,23 +11,29 @@ import asyncio
 from proxybroker import Broker
 
 proxiesList = []
+count = 0
 
 async def show(proxies):
+    global count
     while True:
         proxy = await proxies.get()
         if proxy is None: break
-        proxiesList.append(proxy.as_json()['host']+":"+str(proxy.as_json()["port"]))
+        proxiesList.append(proxy.as_json()['types'][0]['type'].lower()+"://"+proxy.as_json()['host']+":"+str(proxy.as_json()["port"]))
         print(proxy)
+        count+=1
+        print(count)
 
 
 proxies = asyncio.Queue()
 broker = Broker(proxies)
 tasks = asyncio.gather(
-    broker.find(types=['HTTPS'], limit=500),
+    broker.find(types=['HTTPS','HTTP'], limit=700),
     show(proxies))
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(tasks)
+
+
 
 
 
@@ -40,7 +46,7 @@ def request(q,ip):
         p_status = p.wait()
         print(ip)
         proxies = {
-          "https": "https://"+ip,
+          "https": ip,
         }
         headers = {
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
@@ -78,10 +84,10 @@ def run(list):
             p.join()
 
 
-halfProxies1 = proxiesList[0:125]
-halfProxies2 = proxiesList[125:250]
-halfProxies3 = proxiesList[250:375]
-halfProxies4 = proxiesList[375:500]
+halfProxies1 = proxiesList[0:175]
+halfProxies2 = proxiesList[175:350]
+halfProxies3 = proxiesList[350:525]
+halfProxies4 = proxiesList[525:700]
 
 print("Start 1 thread")
 threading.Thread(target=run,args=[halfProxies1]).start()
