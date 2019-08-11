@@ -23,7 +23,7 @@ async def show(proxies):
 proxies = asyncio.Queue()
 broker = Broker(proxies)
 tasks = asyncio.gather(
-    broker.find(types=['HTTPS'], limit=200),
+    broker.find(types=['HTTPS'], limit=500),
     show(proxies))
 
 loop = asyncio.get_event_loop()
@@ -78,10 +78,10 @@ def run(list):
             p.join()
 
 
-halfProxies1 = proxiesList[0:50]
-halfProxies2 = proxiesList[50:100]
-halfProxies3 = proxiesList[100:150]
-halfProxies4 = proxiesList[150:200]
+halfProxies1 = proxiesList[0:125]
+halfProxies2 = proxiesList[125:250]
+halfProxies3 = proxiesList[250:375]
+halfProxies4 = proxiesList[375:500]
 
 print("Start 1 thread")
 threading.Thread(target=run,args=[halfProxies1]).start()
