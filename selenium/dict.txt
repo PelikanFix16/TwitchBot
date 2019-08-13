@@ -47,3 +47,6 @@
 {'username': '27Donald5427', 'password': 'zlyyrdolwo', 'email': 'navin.nihaan@lnsilver.com', 'oauth': 'oauth:ibw5di07ll9rvno1zw5115ac5hjrxr'}
 {'username': '100Ronald_100', 'password': 'blotxkthee', 'email': 'dreyton.egypt@lnsilver.com', 'oauth': 'oauth:4akywi8h8xmsefh5n3tfr6spf8xyka'}
 {'username': '43Rodolfo_43', 'password': 'msclsyjovq', 'email': 'cathan.deaglan@lnsilver.com', 'oauth': 'oauth:pbored01fpprwmstz1inln9sxbmt5t'}
+{'username': '4Neil_4', 'password': 'jgrcoczrfj', 'email': 'montrey.brodan@lnsilver.com', 'oauth': 'oauth:1rp2eld1mocjl0ab3m0crm4rd3h653'}
+{'username': '31Kurt_31', 'password': 'anotxjgohm', 'email': 'izzac.christophe@lnsilver.com', 'oauth': 'oauth:txj8hcma9dbpjjjo6skxulw7yu3nkc'}
+{'username': '25Wayne_25', 'password': 'massovsnpn', 'email': 'jaydn.soren@lnsilver.com', 'oauth': 'oauth:l90y3oqrypw4jhib81kdsik6tp16or'}
